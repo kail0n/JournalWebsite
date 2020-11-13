@@ -17,8 +17,7 @@ server.get('/journal', (req, res) => res.send(journalEntries));
 
 //Add to journal entries
 server.post('/journal', (req, res) => {
-    const journalData = req.body;
-    const newjournal = journalData;
+    const newjournal = req;
     journals.push(newjournal);
     res.status(201).send(newjournal)
 })
