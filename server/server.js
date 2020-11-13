@@ -15,5 +15,8 @@ server.get('/', (req,res) => res.send('Hello, world!'));
 //Journal entires route
 server.get('/journal', (req, res) => res.send(journalEntries));
 
+//Add to journal entries
+
+
 //Server export
 module.exports = server;
