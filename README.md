@@ -1,3 +1,3 @@
 # JournalWebsite
 For Overthinkers.
-By Oerthinkers
+By Overthinkers.
