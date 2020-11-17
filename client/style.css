@@ -1,0 +1,34 @@
+/* Choose your mood button */
+.emoji-button {
+    background-color: green;
+    padding: 10px 24px;
+    width: 50px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+/* this turns the drop down off when not in use */
+.emoji-dropdown-box {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding-top: 20px;
+    margin-left: -25px;
+}
+
+/* this turns the drop down on when in use */
+.emoji-button:hover .emoji-dropdown-box {
+    display: block;
+}
+
+/* change colour of dropdown menu items */
+.emoji-dropdown-box .emoji-button {
+   background-color: aquamarine; 
+}
+
+/* change colour of dropdown menu items when hovered over*/
+.emoji-dropdown-box .emoji-button:hover {
+    background-color: pink;
+    transition-duration: 500ms;
+ }
