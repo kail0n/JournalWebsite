@@ -17,14 +17,28 @@
             <input type="submit" value="submit">
         </section>
     </form>
-    <div class="emojiDropdown">
-        <button onclick="selectEmoji()" class="chooseDrop">Choose Emoji</button>
-        <div id="emojiInd" class="emojiContent">
-            <a href="#">&#129300;</a>
-            <a href="#">&#127906;</a>
-            <a href="#">&#128557;</a>
+  
+
+
+    <nav>
+        <div class="emoji-button">
+            <p>Choose your mood</p>
+            <div class="emoji-dropdown-box">
+                <div class="emoji-button" id="thinking" >
+                    <p>&#129300;</p>
+                </div>
+                <div class="emoji-button" id="rollercoaster" onClick="reply(this.id)">
+                    <p>&#127906;</p>
+                </div>
+                <div class="emoji-button" id="crying">
+                    <p>&#128557;</p>
+                </div>
+            </div>
+            
+
         </div>
-    </div>
+
+    </nav>
 </body>
 
 <footer>© 2020</footer>
