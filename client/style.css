@@ -14,7 +14,7 @@ h2 {
     font-family: 'Playfair Display', serif;
 }
 
-h3 {
+h3, label {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -44,6 +44,8 @@ footer {
     display: inline-block;
     position: relative;
     cursor: pointer;
+    background: #2B2B2B;
+    background-image: -webkit-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
     letter-spacing: 2px;
     text-shadow: 1px 1px 1px #0E0E0E;
     box-shadow: 2px 2px 3px #888;
@@ -96,7 +98,7 @@ footer {
 
 /* change colour of dropdown menu items when hovered over*/
 .emoji-dropdown-box .emojibutton:hover {
-    background-color: rgb(23, 22, 109)
+    background-color: rgb(23, 22, 109);
     transition-duration: 500ms;
     transform: skewX(-25deg) scale(1.3);
  }
