@@ -6,6 +6,10 @@ font-family: 'Playfair Display', serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif; */
 
+body {
+    min-height: 900px;
+}
+
 h1 {
     font-family: 'Gravitas One', cursive;
 }
@@ -18,52 +22,70 @@ h3 {
     font-family: 'Raleway', sans-serif;
 }
 
-p {
+p, #submit-post, label {
     font-family: 'Roboto', sans-serif; 
 }
 
 footer {
     background-color: rgba(0, 0, 0, 0.7);
-    height: auto;
-    width: auto;
     text-align: center;
-    font-size: 0.3rem;
-    padding-top: 5px;
+    font-size: 1rem;
+    padding-top: 25px;
     padding-bottom: 5px;
-    position: absolute;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     color: white;
-
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;  
+    
 }
 
+header {
+    background-color: rgba(0, 0, 0, 0.9) ;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+#submit-post, #btnSearch {
+    background-color:  rgb(104, 115, 211);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px #0E0E0E;
+    box-shadow: 2px 2px 3px #888;
+    border-radius: 8px;
+  }
+
 /* Choose your mood button */
-.emojibutton {
+.emojibutton, .emojibutton1 {
     background-color: rgb(104, 115, 211);
     padding: 5px 24px;
     width: 50px;
     text-align: center;
-    display: inline-block;
+    display: flex;
     position: relative;
     cursor: pointer;
     letter-spacing: 2px;
     text-shadow: 1px 1px 1px #0E0E0E;
     box-shadow: 2px 2px 3px #888;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;   
+    border-radius: 8px;
     color: white;
+    float: left;
+    margin: 10px
+}
     
-}
 
-.emojibutton1 {
-    background-color: rgb(104, 115, 211);
-    padding: 5px 24px;
-    width: 50px;
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-     
-}
-.emojibutton:hover {
+.emojibutton:hover, #submit-post:hover, .emojibutton1:hover{
     background: black; 
 }
 
@@ -74,25 +96,21 @@ footer {
     z-index: 1;
     padding-top: 20px;
     margin-left: -25px;
+    margin-top: 70px;
 }
 
 /* this turns the drop down on when in use */
-.emojibutton:hover .emoji-dropdown-box {
-    display: block;
-}
-.emojibutton1:hover .emoji-dropdown-box {
+.emojibutton:hover .emoji-dropdown-box, .emojibutton1:hover .emoji-dropdown-box {
     display: block;
 }
 
+
 /* change colour of dropdown menu items */
-.emoji-dropdown-box .emojibutton {
+.emoji-dropdown-box .emojibutton, .emoji-dropdown-box .emojibutton1 {
    background-color: aquamarine; 
    box-shadow: 0 0 50px rgba(0, 0, 0, .3);
 }
-.emoji-dropdown-box .emojibutton1 {
-    background-color: aquamarine; 
-    box-shadow: 0 0 50px rgba(0, 0, 0, .3);
- }
+
 
 /* change colour of dropdown menu items when hovered over*/
 .emoji-dropdown-box .emojibutton:hover {
