@@ -45,7 +45,7 @@ function init() {
         out.insertAdjacentElement("afterbegin", fig);
         out1.insertAdjacentElement("afterbegin", fig1);
         out2.insertAdjacentElement("afterbegin", fig2);
-        document.querySelector("#search").value = "";
+        // document.querySelector("#search").value = "";
       })
       .catch(err => {
         console.error(err);
