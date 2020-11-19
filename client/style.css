@@ -14,7 +14,7 @@ h2 {
     font-family: 'Playfair Display', serif;
 }
 
-h3, label {
+h3 {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -44,8 +44,6 @@ footer {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    background: #2B2B2B;
-    background-image: -webkit-linear-gradient(bottom, #2B2B2B 7%, #333333 100%);
     letter-spacing: 2px;
     text-shadow: 1px 1px 1px #0E0E0E;
     box-shadow: 2px 2px 3px #888;
