@@ -9,6 +9,7 @@
     <script defer src="client.js"></script>
     <script defer src="giphy.js"></script>
     <script defer src="interactive.js"></script>
+    <script defer src="giphyButton.js"></script>
  
 
 </head>
@@ -26,7 +27,9 @@
     
     <h3>Comments:</h3>
     <ul>
-        
+        <div id="gifContainer">
+        </div>
+        <p id="date-time"></p>
    
     </ul>
 
@@ -59,9 +62,16 @@
                     <input id="search" type="search" />
                     <button id="btnSearch">Gif</button>
                 </form>
-                <button class="out"></button>
-                <button class="out1"></button>
-                <button class="out2"></button>
+                    <div class="gifButton">
+                        <button class="out"></button>
+                    </div>
+                    <div class="gifButton">
+                        <button class="out1"></button>
+                    </div>
+                    <div class="gifButton">
+                        <button class="out2"></button>
+                    </div>  
+                </div>
             </div>
         </div>
     </div>
