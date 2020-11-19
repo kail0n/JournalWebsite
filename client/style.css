@@ -96,7 +96,7 @@ footer {
 
 /* change colour of dropdown menu items when hovered over*/
 .emoji-dropdown-box .emojibutton:hover {
-    background-color: rgb(23, 22, 109)
+    background-color: rgb(23, 22, 109);
     transition-duration: 500ms;
     transform: skewX(-25deg) scale(1.3);
  }
