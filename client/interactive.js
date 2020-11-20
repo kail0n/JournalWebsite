@@ -1,17 +1,25 @@
-function selectEmoji() {
-    document.getElementById("emojiInd").classList.toggle("show");
-  }
+const container = document.getElementById('emojiContainer');
+
+document.querySelectorAll('.emojibutton').forEach(item => {
+    item.addEventListener('click', () => {
+      //handle click
+
+      let val = event.target.innerHTML;
   
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.chooseDrop')) {
-      const dropdowns = document.getElementsByClassName("emojiContent");
-      const i;
-      for (i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
+    createEmoji();
+
+    function createEmoji() {
+        let emoji = document.querySelector('emoji')
+        if (!emoji) {
+            console.log("emoji not chosen")
+        const pasteEmoji = document.createElement
+        ('emoji');
+        console.log(pasteEmoji)
+        pasteEmoji.innerHTML = val;
+            container.appendChild(pasteEmoji);
+            const d = new Date();
+            document.getElementById("date-time").innerHTML = d;
+        } 
     }
-  }
+})
+});

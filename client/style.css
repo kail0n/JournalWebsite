@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Montserrat&family=Playfair+Display&family=Raleway&family=Roboto&display=swap');
+
+/* font-family: 'Gravitas One', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+body {
+    min-height: 900px;
+}
+
+h1 {
+    font-family: 'Gravitas One', cursive;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
+p, #submit-post, label {
+    font-family: 'Roboto', sans-serif; 
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;  
+    
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.9) ;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+#submit-post, #btnSearch {
+    background-color:  rgb(104, 115, 211);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px #0E0E0E;
+    box-shadow: 2px 2px 3px #888;
+    border-radius: 8px;
+  }
+
+/* Choose your mood button */
+.emojibutton, .emojibutton1 {
+    background-color: rgb(104, 115, 211);
+    padding: 5px 24px;
+    width: 50px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px #0E0E0E;
+    box-shadow: 2px 2px 3px #888;
+    border-radius: 8px;
+    color: white;
+    float: left;
+    margin: 10px
+}
+    
+
+.emojibutton:hover, #submit-post:hover, .emojibutton1:hover{
+    background: black; 
+}
+
+/* this turns the drop down off when not in use */
+.emoji-dropdown-box {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding-top: 20px;
+    margin-left: -25px;
+    margin-top: 70px;
+}
+
+/* this turns the drop down on when in use */
+.emojibutton:hover .emoji-dropdown-box, .emojibutton1:hover .emoji-dropdown-box {
+    display: block;
+}
+
+
+/* change colour of dropdown menu items */
+.emoji-dropdown-box .emojibutton, .emoji-dropdown-box .emojibutton1 {
+   background-color: aquamarine; 
+   box-shadow: 0 0 50px rgba(0, 0, 0, .3);
+}
+
+
+/* change colour of dropdown menu items when hovered over*/
+.emoji-dropdown-box .emojibutton:hover {
+    background-color: rgb(23, 22, 109);
+    transition-duration: 500ms;
+    transform: skewX(-25deg) scale(1.3);
+ }
+
+ .emoji-dropdown-box .emojibutton1:hover {
+    background-color: pink;
+    transition-duration: 500ms;
+ }
