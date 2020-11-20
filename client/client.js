@@ -7,7 +7,7 @@ form.addEventListener('submit', submitWord);
 getAllWords();
 
 function getAllWords(){
-    fetch('http://localhost:3000/journal')
+    fetch('https://desolate-escarpment-31206.herokuapp.com/journal')
         .then(r => r.json())
         .then(appendWords)
         .catch(console.warn)
@@ -31,7 +31,7 @@ function submitWord(e){
         })
     };
 
-    fetch('http://localhost:3000/journal', options)
+    fetch('https://desolate-escarpment-31206.herokuapp.com/journal', options)
         .then(r => r.json())
         .then(appendWord)
         .catch(console.warn)
