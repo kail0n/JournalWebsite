@@ -9,6 +9,8 @@
     <script defer src="client.js"></script>
     <script defer src="giphy.js"></script>
     <script defer src="interactive.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
  
 
 </head>
@@ -19,16 +21,18 @@
     <form id="journal-form">
         <section>
             <label for="forum-post"> What's your post:</label><br><br>
-            <textarea id="word" name="post-area" rows="4" cols="50" maxlength="180" placeholder="enter text"></textarea>
-            <input id="submit-post" type="submit" value="add word">
+            <textarea id="post" name="post-area" rows="4" cols="50" maxlength="180" placeholder="enter text"></textarea>
+            <input id="submit-post" type="submit" value="add post">
         </section>
     </form>
-    
-    <h3>Comments:</h3>
-    <ul>
-        
-   
-    </ul>
+
+    <section id="words">
+        <h3 >Comments:</h3>
+        <p id="posty"></p>
+        <ul>
+            
+        </ul>
+    </section>
 
     <div class="emojibutton">
             <p>Choose your mood</p>
