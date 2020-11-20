@@ -5,8 +5,6 @@ const posts = JSON.parse(data)
 const bodyParser = require('body-parser');
 const cors = require('cors');
 console.log("posts: ", posts)
-// const cors = require('cors');
-// const data = require('./journalEntries.json')
 
 const server = express();
 server.use(bodyParser.json());
@@ -42,10 +40,6 @@ server.post('/journal', (req, res) => {
     fs.writeFile('./posts.json', writedata, finished);
     function finished(err) {
       console.log('all set');
-      // var reply = {
-      //   post: post,
-      //   status: 'success',
-      // };
       res.status(201).send(newPost);
     }
 })
