@@ -9,18 +9,26 @@
     <script defer src="client.js"></script>
     <script defer src="giphy.js"></script>
     <script defer src="interactive.js"></script>
+<<<<<<< HEAD
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+=======
+    <script defer src="giphyButton.js"></script>
+
+>>>>>>> 8f5bb80313318c5fc00c0159cf6b3343b5137c6c
  
 
 </head>
+<header><h1>OverThinkers Blog</h1></header>
+
 <body>
-    <h1>OverThinkers Blog</h1>
+    
     <h2>The place to be for your overthinking to take shape</h2>
     <p>Leave all your thoughts here in no more than 180 characters.</p>
     <form id="journal-form">
         <section>
             <label for="forum-post"> What's your post:</label><br><br>
+<<<<<<< HEAD
             <textarea id="post" name="post-area" rows="4" cols="50" maxlength="180" placeholder="enter text"></textarea>
             <input id="submit-post" type="submit" value="add post">
         </section>
@@ -33,6 +41,20 @@
             
         </ul>
     </section>
+=======
+            <textarea id="word" name="post-area" rows="4" cols="50" maxlength="180" placeholder="enter text"></textarea>
+            <input id="submit-post" type="submit" value="Submit your post">
+        </section>
+    </form>
+    
+    <h3>Comments:</h3>
+    <ul>
+        <div id="gifContainer">
+        </div>
+        <p id="date-time"></p>
+   
+    </ul>
+>>>>>>> 8f5bb80313318c5fc00c0159cf6b3343b5137c6c
 
     <div class="emojibutton">
             <p>Choose your mood</p>
@@ -57,20 +79,28 @@
     <div class="emojibutton1">
         <p>Choose giphy</p>
         <div class="emoji-dropdown-box" id="drop">
-            <div class="emojibutton1" id="thinking">
+            <div class="gifButton" id="thinking">
                 <form action="#" id="form" method="post" name="form">
                     <label for="search">Search</label>
                     <input id="search" type="search" />
                     <button id="btnSearch">Gif</button>
                 </form>
-                <button class="out"></button>
-                <button class="out1"></button>
-                <button class="out2"></button>
+                    <div class="gifButton">
+                        <button class="out"></button>
+                    </div>
+                    <div class="gifButton">
+                        <button class="out1"></button>
+                    </div>
+                    <div class="gifButton">
+                        <button class="out2"></button>
+                    </div>  
+                </div>
             </div>
         </div>
     </div>
 
 
 </body>
+
 <footer>© 2020</footer>
 </html>
