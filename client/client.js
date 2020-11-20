@@ -1,92 +1,78 @@
-// // ********************************************
-// // SETUP
-// const form = document.querySelector('#journal-form');
-// const postsList = document.querySelector('ul')
-// const butn = document.querySelector('#submit-post')
-
-
-// // Bind event listeners
-// form.addEventListener('submit', submitEntry);
-
-// // Fetch all Journal entries as soon as app is loaded
-// getAllJournalEntries();
-
-// // ********************************************
-// function getAllJournalEntries() {
-//     fetch('http://localhost:3000/journal')
-//         .then(r => r.json())
-//         .then(displayEntries)
-//         .catch(console.warn)
-// }
-
-// function submitEntry(e){
-//     e.preventDefault();
-
-//     const postData = {
-//         post: e.target.post.value,
-//     };
-
-//     const options = { 
-//         method: 'POST',
-//         body: JSON.stringify(postData),
-//         headers: {
-//             "Content-Type": "application/json"
-//         }
-//     };
-
-//     fetch('http://localhost:3000/journal', options)
-//         .then(r => r.json())
-//         .then(displayEntry)
-//         .catch(console.warn)
-// };
-
-// function displayEntries(data){
-//     data.posts.forEach(displayEntry);
-// };
-
-// function displayEntry(postData){
-//     const newLi = document.createElement('li');
-//     newLi.textContent = `Journal Post: ${postData.post}`
-//     postsList.append(newLi);
-// };
-
-// function dataPosted(result) {
-//     console.log(result)
-// }
-
-// function postErr(err) {
-//     console.log(err)
-// }
-// -----------------------------------------------------------
-
 const form = document.querySelector('#journal-form')
 const wordsList = document.querySelector('ul')
 
+
 form.addEventListener('submit', submitWord);
 
-getAllWords()
+getAllWords();
 
-function getAllWords() {
+// function getAllWords(){
+//     fetch('http://localhost:3000/journal')
+//         .then(r => r.json())
+//         .then(appendWords)
+//         .catch(console.warn)
+// };
+
+function getAllWords(){
     fetch('http://localhost:3000/journal')
-        .then(r => r.json())
-        .then(appendWords)
-        .catch(console.warn)
-}
+        // .then(r => r.json())
+        // .then(function (response) {
+        //     quote = response
+        //     $('#posty').html(quote)
+        //   })
+        .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            appendWords(data);
+          })
+          .catch(function (err) {
+            console.log(err);
+        });
+        // .then(console.log(wordData))
+        // .then(document.getElementById('posty').textcontent)
+};
+
+// fetch('posts.json')
+//             .then(function (response) {
+//                 return response.json();
+//             })
+//             .then(function (data) {
+//                 appendData(data);
+//             })
+//             .catch(function (err) {
+//                 console.log('error: ' + err);
+//             });
+//         function appendData(data) {
+//             var mainContainer = document.getElementById("posty");
+//             for (var i = 0; i < data.length; i++) {
+//                 var div = document.createElement("div");
+//                 div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+//                 mainContainer.appendChild(div);
+//             }
+//         }
+
+// var mainContainer = document.getElementById("posty");
+// for (var i = 0; i < data.length; i++) {
+//     // append each person to our page
+//     var div = document.createElement("div");
+//     div.innerHTML = 'Name: ' + data[i].postID + ' ' + data[i].post;
+//     mainContainer.appendChild(div);
+//   }
 
 function submitWord(e){
     e.preventDefault();
 
     const wordData = {
-        word: e.target.word.value,
-        // score: e.target.score.value
+        post: e.target.post.value,
     };
-
+    
     const options = { 
         method: 'POST',
         body: JSON.stringify(wordData),
-        headers: {
+        headers: new Headers({
             "Content-Type": "application/json"
-        }
+        })
     };
 
     fetch('http://localhost:3000/journal', options)
@@ -96,19 +82,26 @@ function submitWord(e){
 };
 
 function appendWords(data){
-    data.words.forEach(appendWord);
+    data.posts.forEach(appendWord);
 };
 
 function appendWord(wordData){
     const newLi = document.createElement('li');
-    newLi.textContent = `Word: ${wordData.word} ||`
+    newLi.textContent = `ID:  post: ${wordData.post}`
     wordsList.append(newLi);
+    // document.getElementById('posty').textContent = wordData.post
 };
 
-function dataPosted(result) {
-    console.log(result)
-}
 
-function postErr(err) {
-    console.log(err)
-}
+// const wordData = {
+//     post: e.target.post.value,
+// };
+
+// const options = {
+//     method: 'POST',
+//     body: JSON.stringify(wordData),
+//     headers: new Headers({
+//         "Content-Type": "application/json"
+//     })
+// };
+// fetch('/journal', options);

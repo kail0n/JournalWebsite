@@ -1,9 +1,10 @@
 const express = require('express');
-var fs = require('fs');
-var data = fs.readFileSync('./posts.json');
-var words = JSON.parse(data)
+const fs = require('fs');
+const data = fs.readFileSync('./posts.json');
+const posts = JSON.parse(data)
 const bodyParser = require('body-parser');
 const cors = require('cors');
+console.log("posts: ", posts)
 // const cors = require('cors');
 // const data = require('./journalEntries.json')
 
@@ -13,46 +14,42 @@ server.use(cors());
 server.use(express.static('server'));
 
 const { response } = require('express');
-
 //Root route
 server.get('/', (req,res) => res.send('Hello, world!'));
 
-server.get('/journal', sendAll)
+server.get('/journal', (req, res) => {
+  res.send(posts)
+})
 
-function sendAll(request, response) {
-    response.send(words);
-}
+
 
 server.post('/journal', (req, res) => {
-    const words = JSON.parse(fs.readFileSync('./posts.json'))
-    console.log("words: ", words)
+    const posts = JSON.parse(fs.readFileSync('./posts.json'));
     //
-    var data = req.body
-    console.log("data: ", data)
+    console.log("request: ", req.body)
     //
-    let postID = Object.keys(words).length + 1
-    let word = data.word
-    console.log("postID: ", postID)
+    const jsondata = req.body;
+    console.log('data: ', jsondata);
     //
-    const newPost = { id: postID, word: word}
-    console.log("newPost: ", newPost)
-    // words[word] = score;
-    words[postID] = word;
+    const postID = "id: " + Object.keys(posts).length + 1
+    const post = jsondata.post;
+    const newPost = {id: postID, ...jsondata}
+    console.log("new post",newPost)
     //
-    var data = JSON.stringify(words, null, 2);
-    console.log("words :", words)
-    fs.writeFile('./posts.json', data, finished);
-
+    posts[postID] = post;
+    //
+    const writedata = JSON.stringify(posts, null, 2);
+    fs.writeFile('./posts.json', writedata, finished);
     function finished(err) {
-        console.log("all set")
-        var reply = { 
-            word: word,
-            status: "success"
-        }
-        response.send(reply);
+      console.log('all set');
+      // var reply = {
+      //   post: post,
+      //   status: 'success',
+      // };
+      res.status(201).send(newPost);
     }
-    //
-    res.status(201).send(newPost)
 })
 
 module.exports = server;
+
+
